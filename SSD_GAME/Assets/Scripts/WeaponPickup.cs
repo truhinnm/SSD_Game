@@ -47,13 +47,15 @@ public class WeaponPickup : MonoBehaviour
                     nowPicked.tag = "Weapon";
                     
                     isPicked = true;
-                    nowPicked.GetComponent<Rigidbody>().isKinematic = true;                   
+                    nowPicked.GetComponent<Rigidbody>().isKinematic = true;
+                    nowPicked.GetComponent<Animator>().enabled = true;
                 }              
             }           
             Debug.DrawLine(ray.origin, hit.point, Color.red);
         }
         if (Input.GetKeyDown(KeyCode.R) && isPicked == true)
         {
+            nowPicked.GetComponent<Animator>().enabled = false;
             Debug.Log("Ping!");
             nowPicked.transform.parent = null;
             nowPicked.tag = "weapon_dropped";
