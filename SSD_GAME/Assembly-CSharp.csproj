@@ -56,9 +56,36 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< Updated upstream
     <Compile Include="Assets\Scripts\mouseLook.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\EnemyFollow.cs" />
+=======
+    <Compile Include="Assets\AiRelated\Scripts\Enemy\StateEnemy\ScriptableStates\EnemyController.cs" />
+    <Compile Include="Assets\AiRelated\Scripts\Enemy\StateEnemy\ScriptableStates\Action.cs" />
+    <Compile Include="Assets\Scripts\Player\mouseLook.cs" />
+    <Compile Include="Assets\Scripts\WeaponPickup.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
+    <Compile Include="Assets\AiRelated\Scripts\Enemy\FlockEnemy\FlockManager.cs" />
+    <Compile Include="Assets\Scripts\Healing.cs" />
+    <Compile Include="Assets\Scripts\Weapon\WeaponObject.cs" />
+    <Compile Include="Assets\AiRelated\Scripts\Enemy\StateEnemy\ScriptableStates\Transition.cs" />
+    <Compile Include="Assets\Scripts\Player\HpSystem.cs" />
+    <Compile Include="Assets\Scripts\AttackScript.cs" />
+    <Compile Include="Assets\AiRelated\Scripts\Enemy\FlockEnemy\TotemSpawnManager.cs" />
+    <Compile Include="Assets\AiRelated\Scripts\Enemy\StateEnemy\ScriptableStates\State.cs" />
+    <Compile Include="Assets\AiRelated\Scripts\Enemy\StateEnemy\ScriptableStates\Decision.cs" />
+    <Compile Include="Assets\AiRelated\Scripts\Enemy\FlockEnemy\Enemy.cs" />
+    <Compile Include="Assets\Scripts\EnemyFollow.cs" />
+    <Compile Include="Assets\Scripts\EnemyAttack.cs" />
+    <Compile Include="Assets\AiRelated\Scripts\Enemy\StateEnemy\ScriptableStates\DistanceDecision.cs" />
+    <Compile Include="Assets\AiRelated\Scripts\Enemy\StateEnemy\ScriptableStates\LookDecision.cs" />
+    <Compile Include="Assets\AiRelated\Scripts\Enemy\StateEnemy\ScriptableStates\WaypointsActions.cs" />
+    <Compile Include="Assets\AiRelated\Scripts\Enemy\StateEnemy\ScriptableStates\FollowPlayerAction.cs" />
+    <Compile Include="Assets\AiRelated\Scripts\Enemy\StateEnemy\ScriptableStates\AttackAction.cs" />
+    <Compile Include="Assets\AiRelated\Scripts\Enemy\HeadWolfScript.cs" />
+    <Compile Include="Assets\AiRelated\Scripts\Enemy\StateEnemy\ScriptableStates\FollowHeadWolfAction.cs" />
+>>>>>>> Stashed changes
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Scenes\ProjectSettings\ProjectVersion.txt" />

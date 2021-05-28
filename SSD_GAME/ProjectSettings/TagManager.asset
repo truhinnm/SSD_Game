@@ -6,6 +6,13 @@ TagManager:
   tags:
   - Enemy
   - PatrolPoint
+<<<<<<< Updated upstream
+=======
+  - Weapon
+  - weapon_dropped
+  - wolf
+  - headWolf
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
