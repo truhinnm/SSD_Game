@@ -17,11 +17,13 @@ public class AttackScript : MonoBehaviour
     [SerializeField]
     private int curDur;
 
+    private WeaponPickup wp;
     // Start is called before the first frame update
     void Start()
     {
         curDur = weapon.Durability;
         atk = player.GetComponent<Attack>();
+        wp = player.GetComponent<WeaponPickup>();
     }
 
     // Update is called once per frame
@@ -35,7 +37,9 @@ public class AttackScript : MonoBehaviour
             curDur--;
             if (curDur == 0)
             {
-                Destroy(gameObject);
+                wp.weaponName = "";
+                wp.isPicked = false;
+                Destroy(gameObject);              
             }
         }
     }
