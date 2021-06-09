@@ -13,7 +13,7 @@ public class WeaponPickup : MonoBehaviour
     [SerializeField]
     private Transform position;
 
-    public string weaponName;
+    public string weaponName = "";
 
     public bool isPicked = false;
 
@@ -65,6 +65,7 @@ public class WeaponPickup : MonoBehaviour
             nowPicked.tag = "weapon_dropped";
             isPicked = false;
             nowPicked.GetComponent<Rigidbody>().isKinematic = false;
+            weaponName = "";
         }
     }
 }
