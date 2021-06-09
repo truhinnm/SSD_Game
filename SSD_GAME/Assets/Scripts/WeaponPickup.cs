@@ -13,7 +13,9 @@ public class WeaponPickup : MonoBehaviour
     [SerializeField]
     private Transform position;
 
-    private bool isPicked = false;
+    public string weaponName;
+
+    public bool isPicked = false;
 
     private GameObject nowPicked;
     // Start is called before the first frame update
@@ -43,12 +45,13 @@ public class WeaponPickup : MonoBehaviour
                     nowPicked.transform.parent = transform;
                     nowPicked.transform.position = position.position;
                     nowPicked.transform.rotation = position.rotation;
-
+                    
                     nowPicked.tag = "Weapon";
                     
                     isPicked = true;
+                    nowPicked.GetComponent<AttackScript>().enabled = true;
                     nowPicked.GetComponent<Rigidbody>().isKinematic = true;
-                    nowPicked.GetComponent<Animator>().enabled = true;
+                    weaponName = nowPicked.GetComponent<WeaponObject>().SwordName;
                 }              
             }           
             Debug.DrawLine(ray.origin, hit.point, Color.red);
@@ -58,6 +61,7 @@ public class WeaponPickup : MonoBehaviour
             nowPicked.GetComponent<Animator>().enabled = false;
             Debug.Log("Ping!");
             nowPicked.transform.parent = null;
+            nowPicked.GetComponent<AttackScript>().enabled = false;
             nowPicked.tag = "weapon_dropped";
             isPicked = false;
             nowPicked.GetComponent<Rigidbody>().isKinematic = false;

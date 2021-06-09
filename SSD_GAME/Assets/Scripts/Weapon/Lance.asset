@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: Lance
   m_EditorClassIdentifier: 
   swordName: Lance
-  durability: 0
-  attackDamage: 0
-  attackSpeed: 0
+  durability: 10
+  attackDamage: 20

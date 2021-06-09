@@ -7,66 +7,36 @@ public class AttackScript : MonoBehaviour
     HpSystem hp;
 
     [SerializeField]
-    private bool isAttacking;
+    private WeaponObject weapon;
+
+    private Attack atk;
 
     [SerializeField]
-    private float dur;
+    private GameObject player;
 
     [SerializeField]
-    private float dmg;
+    private int curDur;
 
-    [SerializeField]
-    private float curTimeout;
-
-    [SerializeField]
-    private float timeout;
-
-    [SerializeField]
-    private float attacktime;
-
-    [SerializeField]
-    private float attackend;
-
-    Animator animator;
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponent<Animator>();
-        
+        curDur = weapon.Durability;
+        atk = player.GetComponent<Attack>();
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        curTimeout += Time.deltaTime;
-        if (Input.GetMouseButton(0) && transform.parent.tag == "Player")
-        {
-            if(curTimeout > timeout)
-            {
-                StartCoroutine(AttackCoroutine());   
-                curTimeout = 0;
-            }
-        }
-    }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(isAttacking==true && other.tag == "Enemy") 
+        if(atk.isAttacking == true && other.tag == "Enemy") 
         {
             hp = other.gameObject.GetComponent<HpSystem>();
-            hp.AdjustHealth(-dmg);
-
+            hp.AdjustHealth(-weapon.AttackDamage);
+            curDur--;
+            if (curDur == 0)
+            {
+                Destroy(gameObject);
+            }
         }
-    }
-
-    
-    IEnumerator AttackCoroutine()
-    {
-        Debug.Log("A");
-        isAttacking = true;
-        animator.Play("MouseDownState");
-        yield return new WaitForSeconds(1f);
-        isAttacking = false;
-        Debug.Log("S");
     }
 }

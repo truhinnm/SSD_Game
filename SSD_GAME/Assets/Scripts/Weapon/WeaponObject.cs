@@ -11,6 +11,29 @@ public class WeaponObject : ScriptableObject
     private int durability;
     [SerializeField]
     private int attackDamage;
-    [SerializeField]
-    private int attackSpeed;
+
+    public string SwordName
+    {
+        get
+        {
+            return swordName;
+        }
+    }
+
+    public int Durability
+    {
+        get
+        {
+            return durability;
+        }
+        
+    }
+
+    public int AttackDamage
+    {
+        get
+        {
+            return attackDamage;
+        }
+    }
 }
